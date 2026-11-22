@@ -44,7 +44,7 @@ h1{font-size:clamp(40px,7vw,70px)}h1 em{color:var(--a);font-weight:400}
 #sky line{stroke:var(--line);stroke-width:1.2}#sky line.hl{stroke:var(--a)}
 #sky .n{cursor:pointer;outline:none}#sky .n circle{fill:var(--a);transition:.2s}
 #sky .n:hover circle,#sky .n:focus circle,#sky .n.on circle{fill:var(--b);r:11}
-#sky text{font:14px Fraunces,serif;fill:var(--ink);text-anchor:middle}
+#sky text{font:14px Fraunces,serif;fill:var(--ink);text-anchor:middle;paint-order:stroke;stroke:var(--bg);stroke-width:5px;stroke-linejoin:round}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;margin-top:20px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;transition:transform .2s}
 .card:hover{transform:translateY(-4px) rotate(-.6deg)}.card h3{font-size:19px;margin-bottom:6px}.card p{margin:0;color:var(--muted);font-size:15.5px}
@@ -87,7 +87,7 @@ footer{text-align:center;padding:70px 22px 50px;color:var(--muted)}footer h2{col
 <div class="chips"><a href="https://linkedin.com/in/fatma-s-elsharkawy">LinkedIn</a><a href="https://github.com/FatmaElsharkawy">GitHub</a><a href="https://scholar.google.com/citations?hl=en&amp;user=Dou9azwAAAAJ">Google Scholar</a><a href="Fatma_Elsharkawy_Resume.pdf">Resume</a><a href="mailto:fatmaselsharkawy@gmail.com">Email</a></div>
 </div>
 <div class="vis">
-<h3 class="vt">Research interests</h3>
+<h3 class="vt">Research interests in one visual</h3>
 <div class="vgrid"><svg id="rings" class="pulse" viewBox="0 0 400 400" role="group" aria-label="Three concentric research interests">
 <circle class="r" id="r0" cx="200" cy="200" r="190" tabindex="0"/><circle class="r" id="r1" cx="200" cy="230" r="130" tabindex="0"/><circle class="r" id="r2" cx="200" cy="262" r="72" tabindex="0"/>
 <text x="200" y="42">AI for Science</text><text x="200" y="136">AI for Biomedicine</text><text x="200" y="258">AI in Neuroscience</text>
@@ -112,9 +112,9 @@ footer{text-align:center;padding:70px 22px 50px;color:var(--muted)}footer h2{col
 <section id="experience"><h2>Research &amp; industry experience</h2>
 <div class="tl" id="tl"></div></section>
 
-<section id="interests"><h2>My AI night sky</h2>
-<p>Topics I keep orbiting right now. Click a star.</p>
-<div class="panel" id="sp" aria-live="polite"><h3>AI + Neuroscience</h3>The centre of my sky: every star here pulls toward it.</div>
+<section id="interests"><h2>My AI interest map</h2>
+<p>Topics I keep orbiting right now. Click a node to read more.</p>
+<div class="panel" id="sp" aria-live="polite"><h3>AI + Neuroscience</h3>The centre of my map: every topic here pulls toward it.</div>
 <svg id="sky" viewBox="0 0 800 520" role="group" aria-label="Interests constellation"></svg></section>
 
 <section id="publications"><h2>Publications &amp; presentations</h2>
@@ -155,17 +155,16 @@ var T=[["Sep 2025 – Jul 2026","Bachelor Thesis · Cairo University","<b>Comput
 ["Sep 2023 – Mar 2024","Research Assistant · Rehabilitation &amp; Assistive Technologies Lab, Cairo University","The goal was to see how VR goggles affect neck pain when VR is used for neck rehabilitation. I worked on the protocol design and experimental setup, and collected EMG, IMU and angle data."],
 ["Jan – Feb 2023","Clinical Engineering Intern · Bahya Hospital for Oncology","Explored the clinical engineering role across hospital departments, and learned about radiology and imaging modalities."]];
 $("tl").innerHTML=T.map(function(a){return"<article><time>"+a[0]+"</time><h3>"+a[1]+"</h3><p>"+a[2]+"</p></article>"}).join("");
-var N=[["Neuro-Symbolic AI",210,150,"World models, and systems that learn from one example and generalise out of distribution by joining vision, language and action concepts."],
-["Reasoning",110,310,"Does reasoning matter more than scale?"],
-["Explainable AI + Mechanistic Interpretability",270,420,"Reverse-engineering how models compute their outputs."],
-["Agentic Systems",560,430,"Making LLMs reason, and act on that reasoning."],
-["Continual learning",610,120,"The current challenge in AI models."],
-["Neural Encoding",700,290,"How neural activity represents the world, the bridge back to neuroscience."]];
+var N=[["Neuro-Symbolic AI",200,400,"AI systems that combine neural networks with symbolic logic, like PINNs. This opens the door to promising applications such as few-shot learning and out-of-distribution generalization. I believe it can, in turn, advance world models.",0],
+["Explainable AI + Mechanistic Interpretability",200,140,"Why does the model produce this output, and how does it get there? Would mechanistic interpretability really enable breakthroughs, since we would be able to understand how these models arrived at their behavior?",1],
+["Agentic Systems & Reasoning",560,430,"Making LLMs reason, and act on that reasoning. A question I have been thinking about lately: does reasoning matter more than scale?",1],
+["Continual learning",610,120,"One of the current challenges in AI models and a core requirement for AGI. Can AI reach the stability-plasticity balance?",0],
+["Neural Encoding & NeuroTechnology",700,290,"How does neural activity represent the world, and how can our understanding of those neural representations help neurotechnology applications?",0]];
 var s=$("sky"),h='';
 N.forEach(function(n,i){h+='<line id="l'+i+'" x1="400" y1="260" x2="'+n[1]+'" y2="'+n[2]+'"/>'});
-h+='<line x1="210" y1="150" x2="110" y2="310" stroke-dasharray="4 4"/>';
+h+='<line x1="200" y1="400" x2="560" y2="430" stroke-dasharray="5 5"/>';
 h+='<circle cx="400" cy="260" r="16" fill="var(--b)"/><text x="400" y="296">AI + Neuroscience</text>';
-N.forEach(function(n,i){h+='<g class="n" id="n'+i+'" tabindex="0" role="button"><circle cx="'+n[1]+'" cy="'+n[2]+'" r="8"/><text x="'+n[1]+'" y="'+(n[2]-18)+'">'+n[0].replace(" + ","</text><text x=\""+n[1]+'" y="'+(n[2]-3)+'">+ ')+'</text></g>'});
+N.forEach(function(n,i){var L=n[0].replace(/ ([+&]) /," $1\n").split("\n"),y0=n[4]?n[2]+30:n[2]-16-(L.length-1)*15;h+='<g class="n" id="n'+i+'" tabindex="0" role="button"><circle cx="'+n[1]+'" cy="'+n[2]+'" r="8"/>'+L.map(function(t,k){return'<text x="'+n[1]+'" y="'+(y0+k*15)+'">'+t.replace("&","&amp;")+'</text>'}).join("")+'</g>'});
 s.innerHTML=h;
 function star(i){N.forEach(function(_,k){$("n"+k).classList.toggle("on",k===i);$("l"+k).classList.toggle("hl",k===i)});$("sp").innerHTML="<h3>"+N[i][0]+"</h3>"+N[i][3]}
 N.forEach(function(_,i){var e=$("n"+i);e.onclick=function(){star(i)};e.onkeydown=function(ev){if(ev.key==="Enter")star(i)}});
