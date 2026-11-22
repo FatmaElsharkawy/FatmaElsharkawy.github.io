@@ -87,7 +87,7 @@ footer{text-align:center;padding:70px 22px 50px;color:var(--muted)}footer h2{col
 <div class="chips"><a href="https://linkedin.com/in/fatma-s-elsharkawy">LinkedIn</a><a href="https://github.com/FatmaElsharkawy">GitHub</a><a href="https://scholar.google.com/citations?hl=en&amp;user=Dou9azwAAAAJ">Google Scholar</a><a href="Fatma_Elsharkawy_Resume.pdf">Resume</a><a href="mailto:fatmaselsharkawy@gmail.com">Email</a></div>
 </div>
 <div class="vis">
-<h3 class="vt">Research interests in one visual</h3>
+<h3 class="vt">Research interests</h3>
 <div class="vgrid"><svg id="rings" class="pulse" viewBox="0 0 400 400" role="group" aria-label="Three concentric research interests">
 <circle class="r" id="r0" cx="200" cy="200" r="190" tabindex="0"/><circle class="r" id="r1" cx="200" cy="230" r="130" tabindex="0"/><circle class="r" id="r2" cx="200" cy="262" r="72" tabindex="0"/>
 <text x="200" y="42">AI for Science</text><text x="200" y="136">AI for Biomedicine</text><text x="200" y="258">AI in Neuroscience</text>
@@ -143,7 +143,7 @@ footer{text-align:center;padding:70px 22px 50px;color:var(--muted)}footer h2{col
 <script>
 var $=function(i){return document.getElementById(i)};
 $("th").onclick=function(){var d=document.documentElement,dk=matchMedia("(prefers-color-scheme:dark)").matches;var cur=d.dataset.theme||(dk?"dark":"light");d.dataset.theme=cur==="dark"?"light":"dark"};
-var R=[{t:"AI for Science",x:"The widest lens. I’m interested in any application of AI to scientific discovery and innovation. This is what I’m specializing in now, in my master’s."},
+var R=[{t:"AI for Science",x:"The widest lens. I’m interested in any application of AI that leads to scientific discovery which contributes to human wellbeing. This is what I’m specializing in now, in my master’s."},
 {t:"AI for Biomedicine",x:"The narrower circle, where I’ve done most of my building as a biomedical engineer, from diagnostic AI models to neuroprosthetics and neuroimaging."},
 {t:"AI in Neuroscience",x:"The narrowest lens. My specific interest is the two-way exchange between AI and neuroscience. I believe brain science can inspire more robust AI models, especially in cognition. At the same time, AI has great potential to accelerate neuroscience discovery, especially in understanding neurological disorders."}];
 function ring(i){$("rings").classList.remove("pulse");[0,1,2].forEach(function(k){$("r"+k).classList.toggle("on",k===i);$("t"+k).classList.toggle("on",k===i)});$("rp").innerHTML="<h3>"+R[i].t+"</h3>"+R[i].x}
