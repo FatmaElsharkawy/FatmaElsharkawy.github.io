@@ -70,9 +70,14 @@ h2 em{color:var(--a);font-weight:400}
 ul.pub b{min-width:80px}
 .hob h3{font-size:24px;text-align:center;padding:14px 0}
 .tl p b{color:var(--ink);font-weight:500}
+.top{flex-wrap:wrap;gap:8px 18px}
+nav{display:flex;gap:4px 18px;flex-wrap:wrap}
+nav a{font:15px "DM Sans",system-ui,sans-serif;color:var(--muted);text-decoration:none;padding:2px 0;border-bottom:2px solid transparent}
+nav a:hover,nav a:focus{color:var(--ink);border-bottom-color:var(--a)}
+@media(max-width:860px){nav{order:3;width:100%;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;padding-bottom:4px}}
 footer{text-align:center;padding:70px 22px 50px;color:var(--muted)}footer h2{color:var(--ink)}
 </style></head><body>
-<div class="top"><a href="#">✦ Fatma Elsharkawy</a><button id="th" aria-label="Toggle light and dark">◐ theme</button></div>
+<div class="top"><a href="#">✦ Fatma Elsharkawy</a><nav aria-label="Sections"><a href="#about">About</a><a href="#education">Education</a><a href="#experience">Experience</a><a href="#interests">Interests</a><a href="#publications">Publications</a><a href="#awards">Awards</a><a href="#off-the-clock">Off the clock</a></nav><button id="th" aria-label="Toggle light and dark">◐ theme</button></div>
 <main>
 <header class="hero">
 <div>
@@ -96,29 +101,29 @@ footer{text-align:center;padding:70px 22px 50px;color:var(--muted)}footer h2{col
 </div>
 </header>
 
-<section><h2>Jack of all trades, master of <em>one</em></h2>
+<section id="about"><h2>Jack of all trades, master of <em>one</em></h2>
 <p>High school made me fall for technology that heals things, and I have been chasing that ever since. With my interdisciplinary interests, I pursued a bachelor’s in systems and biomedical engineering. I wandered widely through clinical engineering, embedded systems, data science and software, then dug deep into AI for biomedical applications, especially neuroscience and neuroengineering. My aim is to build AI that helps scientific discovery in the medical and neuro fields, which in turn requires the models themselves to be robust, interpretable and trustworthy.</p></section>
 
-<section><h2>Education</h2>
+<section id="education"><h2>Education</h2>
 <div class="grid">
 <div class="card"><small>2026 – 2027 (expected)</small><h3>M.Sc. in AI for Science</h3><p>AIMS South Africa, Cape Town. Full Google DeepMind Scholarship, one of 40 students selected across Africa.</p></div>
 <div class="card"><small>2021 – 2026</small><h3>B.Sc. in Systems &amp; Biomedical Engineering</h3><p>Cairo University. Distinction with honours, ranked 3rd of 80, GPA 3.85/4.00.</p></div></div></section>
 
-<section><h2>Research &amp; industry experience</h2>
+<section id="experience"><h2>Research &amp; industry experience</h2>
 <div class="tl" id="tl"></div></section>
 
-<section><h2>My AI night sky</h2>
+<section id="interests"><h2>My AI night sky</h2>
 <p>Topics I keep orbiting right now. Click a star.</p>
 <div class="panel" id="sp" aria-live="polite"><h3>AI + Neuroscience</h3>The centre of my sky: every star here pulls toward it.</div>
 <svg id="sky" viewBox="0 0 800 520" role="group" aria-label="Interests constellation"></svg></section>
 
-<section><h2>Publications &amp; presentations</h2>
+<section id="publications"><h2>Publications &amp; presentations</h2>
 <ul class="aw pub">
 <li><b>Preprint</b><span>M. H. Abdellatif*, <strong>F. S. Elsharkawy*</strong>, N. H. Qassem* et al. <a href="https://arxiv.org/abs/2610.05772"><em>Smart Navigation for Visual Prostheses in Virtual Reality: An End-to-End Framework for Priority-Based Scene Translation and Path Guidance.</em></a> arXiv:2610.05772, 2026. <small>*equal contribution</small></span></li>
 <li><b>Talk</b><span>Presenting the preprint above. Accepted abstract, Artificial Vision 2026, International Symposium on Visual Prosthetics, Aachen, Germany, 11–12 December 2026.</span></li>
 <li><b>Talk</b><span><strong>F. S. Elsharkawy</strong>, M. H. Abdellatif, N. H. Qassem et al. <em>From Simulation to Reality: An Autonomous AI-Based Smart Navigation Wearable System for Bionic Vision Prosthetics, a Pilot Study.</em> Accepted abstract, Artificial Vision 2026, Aachen, Germany, 11–12 December 2026.</span></li></ul></section>
 
-<section><h2>Awards &amp; recognition</h2>
+<section id="awards"><h2>Awards &amp; recognition</h2>
 <ul class="aw">
 <li><b>2025</b><span>Thesis research funding from ITIDA, ASRT and Misr El Kheir</span></li>
 <li><b>2024</b><span>Best Storytelling Award, NASA Space Apps Challenge, team <a href="https://www.spaceappschallenge.org/nasa-space-apps-2024/find-a-team/terratales/">TerraTales</a> (out of 9,990 teams)</span></li>
@@ -127,7 +132,7 @@ footer{text-align:center;padding:70px 22px 50px;color:var(--muted)}footer h2{col
 <li><b>2020</b><span>Bronze medal, Arab Mathematical Olympiad</span></li></ul>
 </section>
 
-<section><h2>Off the clock</h2><p class="note">the other side of me</p>
+<section id="off-the-clock"><h2>Off the clock</h2><p class="note">the other side of me</p>
 <p>When things get overwhelming, here is how I unwind.</p>
 <div class="grid">
 <div class="card hob"><h3>Pencil drawing</h3></div>
